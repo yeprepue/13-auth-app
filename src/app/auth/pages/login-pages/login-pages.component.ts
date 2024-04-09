@@ -9,9 +9,13 @@ export class LoginPageComponent {
 
   private fb = inject(FormBuilder);
 
-  public myform :FormGroup = this.fb.group({
+  public myForm :FormGroup = this.fb.group({
     email:['',[Validators.required, Validators.email]],
     password:['',[Validators.required, Validators.minLength(6)]],
-  })
+  });
+
+  login(){
+    console.log(this.myForm.value);
+  }
 
 }
